@@ -31,7 +31,7 @@ const HeroSection = () => {
     console.log(data)
   }
   return (
-    <div>
+    <div className="container min-h-screen grid place-items-center">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
