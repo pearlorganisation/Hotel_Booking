@@ -2,7 +2,7 @@ import React from "react";
 
 const NewsLetter = () => {
   return (
-    <div className="max-w-7xl container mx-auto  grid md:grid-cols-2 gap-1 items-center border">
+    <div className="max-w-7xl container mx-auto  grid md:grid-cols-2 gap-1 items-center my-5">
       <div className="w-full h-full">
         <img
           src="https://modtel.travelerwp.com/wp-content/uploads/2022/06/Rectangle-7-min-768x517.png"

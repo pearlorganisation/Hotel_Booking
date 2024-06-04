@@ -4,25 +4,25 @@ const Staycation = () => {
   const data = [
     {
       img: "https://modtel.travelerwp.com/wp-content/uploads/2022/04/feature-11-450x300.png",
-      titile: "TreeHouse Villas",
+      title: "TreeHouse Villas",
       address: "California City, CA, USA",
       price: "195,00",
     },
     {
       img: "https://modtel.travelerwp.com/wp-content/uploads/2022/04/feature-21.png",
-      titile: "TreeHouse Villas",
+      title: "TreeHouse Villas",
       address: "California City, CA, USA",
       price: "205,00",
     },
     {
       img: "https://modtel.travelerwp.com/wp-content/uploads/2022/04/feature-1-2-450x300.png",
-      titile: "TreeHouse Villas",
+      title: "TreeHouse Villas",
       address: "California City, CA, USA",
       price: "185,00",
     },
     {
       img: "https://modtel.travelerwp.com/wp-content/uploads/2022/04/feature-20-450x300.png",
-      titile: "TreeHouse Villas",
+      title: "TreeHouse Villas",
       address: "California City, CA, USA",
       price: "185,00",
     },
@@ -38,10 +38,10 @@ const Staycation = () => {
         <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1  gap-10 container">
           {data.map((el, i) => {
             return (
-              <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white ">
+              <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-[#F7F8FA] ">
                 <img class="w-full" src={el.img} alt="Hotel Image" />
                 <div class="p-4">
-                  <h2 class="font-bold text-xl mb-2">{el.titile}</h2>
+                  <h2 class="font-bold text-xl mb-2">{el.title}</h2>
                   <p class="text-gray-600">{el.address}</p>
                   <div class="flex items-center mt-4">
                     <div class="flex items-center text-yellow-500">
