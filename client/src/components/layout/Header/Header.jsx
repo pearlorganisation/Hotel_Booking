@@ -185,7 +185,7 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
   const showFlyout = open && FlyoutContent
 
   return (
-    <div className='relative h-fit w-fit '
+    <div className='z-[1000] relative h-fit w-fit '
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
@@ -223,7 +223,7 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
 }
 
 const HotelContent = () => {
-  return <div className='w-60 rounded-md bg-slate-800 p-6 shadow-xl flex flex-col text-[18px] gap-2 text-start'>
+  return <div className=' w-60 rounded-md bg-slate-800 p-6 shadow-xl flex flex-col text-[18px] gap-2 text-start'>
     <Link to="/" className="text-white  text-[16px]  hover:underline hover:underline-offset-4 ">Search Hotel Half Map</Link>
     <Link to="/" className="text-white  text-[16px]  hover:underline hover:underline-offset-4 ">Search Hotel Popup Map</Link>
     <Link to="/" className="text-white  text-[16px]  hover:underline hover:underline-offset-4 ">Search Hotel Full Map</Link>
