@@ -25,17 +25,26 @@ import PopOver from "./PopOver";
 
 
 
+
 const HeroSection = () => {
   const form = validation()
   function onSubmit(data) {
     console.log(data)
   }
   return (
-    <div className="container min-h-screen grid place-items-center">
-      <Form {...form}>
+    <div className="">
+      <div className=" relative background-image text-white opacity-90  h-[400px] flex justify-center items-center w-full bg-cover ">
+   <div className="absolute w-full h-full bg-black/20"></div>
+    <div className="z-30">
+      <p className="text-center text-5xl font-sans font-medium ">
+Find Your Perfect Stay
+</p>
+<p className="text-xl font-semibold">Book your dream hotel now for the best prices and exclusive offers.</p>
+    </div>
+      <div className=" translate-y-6 border text-black bg-white rounded-lg shadow-md absolute bottom-0"> <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="  flex border-2 rounded-md p-1 gap-3 border-blue-600 ring-4 ring-blue-600/30  justify-start items-center"
+          className=" flex  rounded-md p-1 gap-3   justify-start items-center"
         >
           <FormField
             control={form.control}
@@ -77,7 +86,10 @@ const HeroSection = () => {
           <PopOver />
           <Button type="submit" className='bg-blue-600'>Submit</Button>
         </form>
-      </Form>
+      </Form></div>
+      </div>
+     
+      
     </div>
   );
 };
