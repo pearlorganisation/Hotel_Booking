@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { FaAngleDown } from "react-icons/fa6";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import { FaShoppingBasket } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa6";
 import { AnimatePresence, motion } from 'framer-motion'
@@ -10,7 +10,8 @@ import { FaBars } from "react-icons/fa";
 const Header = () => {
 
   const [isOpen, setIsOpen] = useState(false)
-
+const [hotel,setHotel] = useState(false)
+const [pages,setPages] = useState(false)
   const toggleMenu = () => {
 
     setIsOpen(prev => {
@@ -20,14 +21,14 @@ const Header = () => {
   }
 
   return (
-    <div>
+    <div className='z-50'>
       {/* //Header for Desktop*/}
 
       <div class='hidden mx-5 my-5 lg:mx-10 lg:my-5 lg:flex flex-wrap items-center justify-between gap-2 '>
-        <a href="javascript:void(0)" className='hidden lg:block lg:text-3xl text-slate-700'>
+        <Link href="javascript:void(0)" className='hidden lg:block lg:text-3xl text-slate-700'>
           {/* <img src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' /> */}
           HOTEL BOOKING
-        </a>
+        </Link>
 
         <div id="collapseMenu"
           class='max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
@@ -45,8 +46,8 @@ const Header = () => {
           <ul
             class='lg:flex gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
             <li class='mb-6 hidden max-lg:block'>
-              <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' />
-              </a>
+              <Link href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' />
+              </Link>
             </li>
 
             <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
@@ -63,11 +64,11 @@ const Header = () => {
                 Pages
               </FlyoutLink>
             </li>
-            <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
-              class='hover:text-[#007bff] text-slate-700 block font-semibold text-[18px]'>Contact Us</a>
+            <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><Link href='javascript:void(0)'
+              class='hover:text-[#007bff] text-slate-700 block font-semibold text-[18px]'>Contact Us</Link>
             </li>
-            <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
-              class='hover:text-[#007bff] text-slate-700 block font-semibold text-[18px]'>About Us</a>
+            <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><Link href='javascript:void(0)'
+              class='hover:text-[#007bff] text-slate-700 block font-semibold text-[18px]'>About Us</Link>
             </li>
 
           </ul>
@@ -75,7 +76,7 @@ const Header = () => {
 
         <div class='flex  lg:max-lg:ml-auto  lg:space-x-6 '>
 
-          <button className='border rounded-full p-1 lg:p-2 lg:hover:p-[7px] bg-slate-700 text-white hover:bg-white hover:text-slate-700 hover:border-slate-700 hover:border-2'>  <FaShoppingBasket />
+          <button className='border rounded-full p-1 lg:p-2 lg:hover:p-[7px] bg-slate-700 text-white hover:bg-white hover:text-slate-700 hover:border-slate-700 hover:border-2'>  <FaShoppingBasket size={25} />
           </button>
 
           <button
@@ -93,16 +94,16 @@ const Header = () => {
       <div class='lg:hidden mx-5 my-5 flex flex-wrap items-center justify-between gap-2 '>
 
         <button onClick={toggleMenu} >
-          <FaBars />
+          <FaBars size={20} />
         </button>
-        <a href="javascript:void(0)" className='text-2xl font-medium text-slate-700'>
+        <Link href="javascript:void(0)" className='text-2xl font-medium text-slate-700'>
           {/* <img src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' /> */}
           HOTEL BOOKING
-        </a>
+        </Link>
         <button >
-          <FaShoppingBasket /></button>
+          <FaShoppingBasket size={23} /></button>
         <button >
-          <FaRegUser /></button>
+          <FaRegUser size={18}/></button>
 
 
         {/* Sidebar */}
@@ -118,30 +119,51 @@ const Header = () => {
               </button>
               <ul className='space-y-3'>
                 <li className='mb-6'>
-                  <a href="javascript:void(0)" className='text-2xl font-medium text-slate-700'>
+                  <Link href="javascript:void(0)" className='text-2xl font-medium text-slate-700'>
                     {/* <img src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' /> */}
                     HOTEL BOOKING
-                  </a>
+                  </Link>
                 </li>
                 <li className='border-b border-gray-300 py-3 px-3'>
-                  <a href='javascript:void(0)' className=' text-slate-700 block font-semibold text-[18px]'>
-                    Hotel <FaAngleDown />
-                  </a>
+                  <Link href='javascript:void(0)' onClick={()=>{
+                    setHotel(!hotel)
+                  }} className='flex justify-between items-center text-slate-700  font-semibold text-[18px]'>
+                    Hotel <span> {hotel ? <FaAngleUp /> : <FaAngleDown/>}</span>
+                  </Link>
                 </li>
-                <li className='border-b border-gray-300 py-3 px-3'>
-                  <a href='javascript:void(0)' className=' text-slate-700 block font-semibold text-[18px]'>
-                    Pages  <FaAngleDown />
-                  </a>
+                {hotel &&
+                <div class=""> 
+                <li className='border-b border-gray-300 py-2 px-3'>Hotel Option 1</li>
+                <li className='border-b border-gray-300 py-2 px-3'>Hotel Option 1</li>
+                <li className='border-b border-gray-300 py-2 px-3'>Hotel Option 1</li>
+                <li className='border-b border-gray-300 py-2 px-3'>Hotel Option 1</li>
+   
+  </div>
+                                }
+                                                <li className=' border-b border-gray-300 py-3 px-3'>
+                  <Link href='javascript:void(0)' onClick={()=>{
+                    setPages(!pages)
+                  }} className='flex justify-between gap-1 items-center text-slate-700  font-semibold text-[18px]'>
+                    Pages  <span>{pages ? <FaAngleUp /> : <FaAngleDown/>}</span>
+                  </Link>
                 </li>
+                {pages &&
+                <div class=""> 
+                <li className='border-b border-gray-300 py-2 px-3'>Page Option 1</li>
+                <li className='border-b border-gray-300 py-2 px-3'>Page Option 1</li>
+                <li className='border-b border-gray-300 py-2 px-3'>Page Option 1</li>
+                <li className='border-b border-gray-300 py-2 px-3'>Page Option 1</li>
+   
+  </div>}
                 <li className='border-b border-gray-300 py-3 px-3'>
-                  <a href='javascript:void(0)' className=' text-slate-700 block font-semibold text-[18px]'>
+                  <Link href='javascript:void(0)' className=' text-slate-700  font-semibold text-[18px]'>
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
                 <li className='border-b border-gray-300 py-3 px-3'>
-                  <a href='javascript:void(0)' className=' text-slate-700 block font-semibold text-[18px]'>
+                  <Link href='javascript:void(0)' className=' text-slate-700  font-semibold text-[18px]'>
                     About Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -167,14 +189,14 @@ const FlyoutLink = ({ children, href, FlyoutContent }) => {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <a href={href} className='relative text-slate-700 font-semibold hover:text-[#007bff] text-[18px]'>
-        {children} <FaAngleDown />
+      <Link to={href} className='relative flex items-center gap-1 text-slate-700 font-semibold hover:text-[#007bff] text-[18px]'>
+        {children} <span> <FaAngleDown /></span>
         <span
           style={{ transform: open ? "scaleX(1)" : "scaleX(0)" }}
           //  border navbar
           className='bg-slate-700 absolute h-[5px] -bottom-3 -left-2 -right-2 rounded-full origin-left transition-transform duration-300 ease-out'>
         </span>
-      </a>
+      </Link>
 
       <AnimatePresence>{showFlyout &&
         (<motion.div
