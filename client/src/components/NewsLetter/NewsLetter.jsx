@@ -2,7 +2,7 @@ import React from "react";
 
 const NewsLetter = () => {
   return (
-    <div className="max-w-7xl container mx-auto  grid md:grid-cols-2 gap-1 items-center my-5">
+    <div className="max-w-7xl container mx-auto py-24 space-y-10   grid md:grid-cols-2 gap-1 items-center">
       <div className="w-full h-full">
         <img
           src="https://modtel.travelerwp.com/wp-content/uploads/2022/06/Rectangle-7-min-768x517.png"
@@ -25,7 +25,7 @@ const NewsLetter = () => {
             <input
               type="email"
               placeholder="Email Address"
-              className="w-full md:w-2/3 p-3  rounded-lg mb-4 md:mb-0 md:mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full md:w-2/3 p-3  rounded-lg mb-4 md:mb-0 md:mr-2 border-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <button
               type="submit"

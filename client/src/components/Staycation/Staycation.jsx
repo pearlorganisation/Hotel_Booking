@@ -30,8 +30,8 @@ const Staycation = () => {
 
   return (
     <>
-      <div className="bg-[#F7F8FA] p-10 ">
-        <h1 className="text-3xl  font-medium text-center py-10">
+      <div className="bg-[#F7F8FA] py-24 space-y-10 ">
+        <h1 className="text-3xl  font-medium text-center ">
           Plan your next staycation
         </h1>
 

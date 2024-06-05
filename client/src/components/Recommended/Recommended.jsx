@@ -37,7 +37,7 @@ const Recommended = () => {
 
   return (
     <>
-      <div className="p-10 container">
+      <div className="py-24 space-y-10  container">
         <h1 className="mb-6 text-2xl font-bold">Recommended</h1>
         <Swiper
           navigation={true}
